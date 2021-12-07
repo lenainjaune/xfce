@@ -9,7 +9,7 @@ Tuer tous les processus XFCE uniquement si toutes les sessions sont fermées :
 ```sh
 P=$( ps ax -o pid,cmd | grep -i xfce | grep -v "grep " ) ; [[ ! $( echo -e "$P" | grep -v xfconfd ) ]] && for p in $( echo -e "$P" | cut -d ' ' -f 2 ) ; do kill $p ; done
 ```
-Copie (UT peut être SKEL pour l'ajouter pour tous les nouveaux utilisateurs) :
+Copie (User Target peut être SKEL pour l'ajouter pour tous les nouveaux utilisateurs) :
 ```sh
 US=feve
 UT=root
