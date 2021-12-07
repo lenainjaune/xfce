@@ -4,12 +4,15 @@ Tout ce qui concerne ce super DE
 ## refreshing
 https://www.makeuseof.com/tag/refresh-linux-desktop-without-rebooting/
 
-# Copier paramétrage XFCE4
-Tuer tous les processus XFCE uniquement si toutes les sessions sont fermées :
+# Cloner paramétrage XFCE4
+## Tuer processus XFCE
+Uniquement si toutes les sessions sont fermées :
 ```sh
 P=$( ps ax -o pid,cmd | grep -i xfce | grep -v "grep " ) ; [[ ! $( echo -e "$P" | grep -v xfconfd ) ]] && for p in $( echo -e "$P" | cut -d ' ' -f 2 ) ; do kill $p ; done
 ```
-Copie (User Target peut être SKEL pour l'ajouter pour tous les nouveaux utilisateurs) :
+
+## Copier paramétrage
+Nota : User Target peut être SKEL pour l'ajouter pour tous les nouveaux utilisateurs.
 ```sh
 US=feve
 UT=root
