@@ -24,7 +24,7 @@ HT=$( [[ $UT == root ]] && echo /root || ( [[ $UT == SKEL ]] \
  && ( mkdir -p /etc/skel/.config ; echo /etc/skel ) || echo /home/$UT ) )
 mv "$HT/.config/xfce4" "$HT/.config/xfce4.old"
 cp -r "$HS/.config/xfce4" "$HT/.config/"
-[[ $UT == SKEL ]] && chown -R root: "$HT/.config/" || chown -R $UT: "$HT/.config/"
+[[ $UT == SKEL ]] && chown -R root: "$HT/.config/xfce4" || chown -R $UT: "$HT/.config/"
 ```
 Nota : je ne sais plus pourquoi mais il faut aussi dans certains cas le dossiers menus.
 TODO : clarifier la nécessité du dossier menus
