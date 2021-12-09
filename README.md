@@ -13,6 +13,8 @@ P=$( ps ax -o pid,cmd | grep -i xfce | grep -v "grep " ) ; [[ ! $( echo -e "$P" 
 
 ## Copier paramétrage
 Nota : User Target peut être SKEL pour l'ajouter pour tous les nouveaux utilisateurs.
+
+TODO : modifier pour que UT puisse etre une liste d'utilisateurs (dont SKEL)
 ```sh
 US=feve
 UT=root
