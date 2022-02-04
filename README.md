@@ -8,7 +8,7 @@ https://www.makeuseof.com/tag/refresh-linux-desktop-without-rebooting/
 ## Tuer processus XFCE
 Uniquement si toutes les sessions sont fermées :
 ```sh
-P=$( ps ax -o pid,cmd | grep -i xfce | grep -v "grep " ) ; [[ ! $( echo -e "$P" | grep -v xfconfd ) ]] && for p in $( echo -e "$P" | cut -d ' ' -f 2 ) ; do kill $p ; done
+P=$( ps ax -o pid,cmd | grep -i xfce | grep -v "grep " ) ; [[ ! $( echo -e "$P" | grep -v xfconfd ) ]] && for p in $( echo -e "$P" | awk '{ print $1 }' ) ; do kill $p ; done
 ```
 
 ## Copier paramétrage
